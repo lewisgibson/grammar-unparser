@@ -21,15 +21,15 @@ const Grammar = {
  * More detailed tests
  */
 describe('Core Functionality', () => {
-    const Table = `\na\n${new Array(100).fill(1).join('\n')}`;
-
-    it.each`${Table}`('Should match the original RegExp', () => {
-        const Instance = new Unparser({
-            Rules: Grammar.ParserRules,
-            Start: Grammar.ParserStart,
-        });
+    test('Should match the original RegExp', () => {
+        for(let j = 0; j < 10000; j++) {
+            const Instance = new Unparser({
+                Rules: Grammar.ParserRules,
+                Start: Grammar.ParserStart,
+            });
     
-        expect(Instance.Parse()).toMatch(/[a-zA-Z0-9]{3,6}/);
+            expect(Instance.Parse()).toMatch(/^[fobar\d,]+$/);
+        }
     });
 
     test('Seeding', () => {

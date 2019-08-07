@@ -1,6 +1,6 @@
 {
     "name": "grammar-unparser",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "A nearley grammar unparser.",
     "author": "Lewis Gibson <lewis-gibson@hotmail.com>",
     "license": "MIT",
