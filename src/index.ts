@@ -64,9 +64,9 @@ export default class Parser {
             const Overrides = Object.keys(this.Options.OverrideRules);
 
             if(Overrides.includes(RuleName)) this.Stack.push({ literal: this.Options.OverrideRules[RuleName]() });
-            else if(typeof RuleName === 'string') this.Stack = [...this.Stack, ...(this.SelectRule(RuleName).symbols)];
+            else if(typeof RuleName === 'string') this.SelectRule(RuleName).symbols.forEach(Symb => this.Stack.push(Symb));
             else if(RuleName.test) this.Output += new RandExpression(RuleName).gen();
-            else if(RuleName.literal)this.Output += RuleName.literal;
+            else if(RuleName.literal) this.Output += RuleName.literal;
         }
     
         return this.Output;
