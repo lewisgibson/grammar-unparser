@@ -1,6 +1,6 @@
 {
     "name": "grammar-unparser",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A nearley grammar unparser.",
     "author": "Lewis Gibson <lewis-gibson@hotmail.com>",
     "license": "MIT",
@@ -25,7 +25,8 @@
         "postversion": "git push && git push --tags"
     },
     "dependencies": {
-        "randexp": "^0.5.3"
+        "randexp": "^0.5.3",
+        "seedrandom": "^3.0.1"
     },
     "devDependencies": {
         "@types/jest": "^24.0.15",

@@ -1,4 +1,5 @@
 import RandExpression from 'randexp';
+import SeedRandom from 'seedrandom';
 
 interface ICtorOpts {
     OverrideRules?: Record<string, () => any>;
@@ -27,6 +28,8 @@ export default class Parser {
         Object.assign(this.Options, Override);
         this.Stack = [this.Options.Start];
     }
+
+    public SetSeed = (Seed: string) => SeedRandom(Seed, { global: true });
 
     private RandInt = (Range: number) => Math.floor(Math.random() * Range);
 

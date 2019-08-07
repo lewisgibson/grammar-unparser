@@ -31,4 +31,15 @@ describe('Core Functionality', () => {
     
         expect(Instance.Parse()).toMatch(/[a-zA-Z0-9]{3,6}/);
     });
+
+    test('Seeding', () => {
+        const Instance = new Unparser({
+            Rules: Grammar.ParserRules,
+            Start: Grammar.ParserStart,
+        });
+
+        Instance.SetSeed('abc');
+
+        expect(Instance.Parse()).toMatchSnapshot();
+    });
 });

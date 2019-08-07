@@ -17,6 +17,7 @@ coverage
 
 # build
 build
+tests/__snapshots__
 
 # Dependency directories
 node_modules/
